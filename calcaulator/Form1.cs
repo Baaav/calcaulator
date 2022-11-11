@@ -10,7 +10,17 @@ namespace calcaulator
         private void button1_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            textBox1.Text = textBox1.Text+ btn.Text ;
-        }
+            if (textBox1.Text == "0") { textBox1.Clear(); }
+            if (btn.Text == ".")
+            {
+                if (!textBox1.Text.Contains("."))
+                {
+                    textBox1.Text = textBox1.Text + btn.Text;
+                }
+            }
+            else {
+
+                textBox1.Text = textBox1.Text + btn.Text;
+            } }
     }
 }
